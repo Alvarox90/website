@@ -1,463 +1,284 @@
 <!DOCTYPE html>
-<html lang="en"> 
-   <head>
-      <!-- basic -->
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <!-- mobile metas -->
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-      <!-- site metas -->
-      <title>Proyectp</title>
-      <meta name="keywords" content="">
-      <meta name="description" content="">
-      <meta name="author" content="">
-      <!-- bootstrap css -->
-      <link rel="stylesheet" href="css/bootstrap.min.css">
-      <!-- style css -->
-      <link rel="stylesheet" href="css/style.css">
-      <!-- Responsive-->
-      <link rel="stylesheet" href="css/responsive.css">
-      <!-- fevicon -->
-      <link rel="icon" href="images/fevicon.png" type="image/gif" />
-      <!-- Scrollbar Custom CSS -->
-      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
-      <!-- Tweaks for older IEs-->
-      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-      <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
-   </head>
-   <!-- body -->
-   <body class="main-layout">
-      <!-- loader  -->
-      <div class="loader_bg">
-         <div class="loader"><img src="images/loading.gif" alt="#"/></div>
+<html>
+<head>
+  <title>Calculadora Científica</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <div class="marco-madera">
+    <input id="pantalla" type="text" readonly />
+    <div id="historial"></div>
+    <div class="botones">
+      <!-- Primera fila de botones -->
+      <div class="fila-botones">
+        <button onclick="limpiarPantalla()">C</button>
+        <button onclick="agregarOperador('+')">+</button>
+        <button onclick="agregarOperador('-')">-</button>
+        <button onclick="agregarOperador('*')">*</button>
+        <button onclick="agregarOperador('/')">/</button>
+        <button onclick="calcularRaizCuadrada()">√</button>
+        <button onclick="calcularCuadrado()">x²</button>
+        <button onclick="mostrarUltimaOperacion()">ult</button>
+        <button onclick="borrarUltimoCaracter()">←</button>
+
       </div>
-      <!-- end loader -->
-      <!-- header -->
-      <header>
-         <!-- header inner -->
-         <div class="header">
-            <div class="container">
-               <div class="row">
-                  <div class="col-md-12 col-sm-3 col logo_section">
-                     <div class="full">
-                        <div class="center-desk">
-                           <div class="logo">
-                              <a href="principal.html"><img src="images/ibero.png" alt="#" /></a>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-md-10 offset-md-1">
-                     <nav class="navigation navbar navbar-expand-md navbar-dark ">
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarsExample04">
-                           <ul class="navbar-nav mr-auto">
-                              <li class="nav-item active">
-                                 <a class="nav-link" href="abt.html">Reporte de proyecto</a>
-                              </li>
-                              <li class="nav-item">
-                                 <a class="nav-link" href="index.html">Inicio</a>
-                              </li>
-                              <li class="nav-item">
-                             
-                              </li>
-                              </li>
-                           </ul>
-                        </div>
-                     </nav>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </header>
-      <!-- end header inner -->
-      <!-- end header -->
-      <!-- banner -->
-      <section class="banner_main">
-         <div id="myCarousel" class="carousel slide banner" data-ride="carousel">
-            <ol class="carousel-indicators">
-               <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-               <li data-target="#myCarousel" data-slide-to="1"></li>
-               <li data-target="#myCarousel" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-               <div class="carousel-item active">
-                  <div class="container">
-                     <div class="carousel-caption relative">
-                        <div class="row">
-                           <div class="col-md-7 offset-md-5">
-                              <div class="text-bg">
-                                 <h1> Proyecto <br>de Proyecto de estructura de datos y algoritmos avanzados </h1>
-                                 <span></span>
-                              
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="carousel-item">
-                  <div class="container">
-                     <div class="carousel-caption relative">
-                        <div class="row">
-                           <div class="col-md-7 offset-md-5">
-                              <div class="text-bg">
-                                 <h1> Proyecto <br>de Interfaz de Grafo </h1>
-                                 <span>Proyecto pensado para visualizar un grafo</span>
-                            
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="carousel-item">
-                  <div class="container">
-                     <div class="carousel-caption relative">
-                        <div class="row">
-                           <div class="col-md-7 offset-md-5">
-                              <div class="text-bg">
-                                 <h1> Proyecto <br>de Interfaz de Grafo</h1>
-                                 <span> </span>
-                                 <a class="read_more" href="https://drive.google.com/drive/folders/14vKhSeMaz6wdWYOhCwTaPhEXzykmjO1D?usp=sharing">Descargar Archivos</a>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-            <i class="fa fa-angle-left" aria-hidden="true"></i>
-            <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-            <i class="fa fa-angle-right" aria-hidden="true"></i>
-            <span class="sr-only">Next</span>
-            </a>
-         </div>
-      </section>
-      <!-- end banner -->
-      <!-- about -->
-      <div id="about" class="about">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-5">
-                  <div class="titlepage">
-                     <h2>Acerca del <span class="green">Proyecto</span></h2>
-                     <p>Este proyecto busca elaborar un programa con ineterfaz para poder visualizar algunas propiedades de un grafo </p>
-                     <a class="read_more" href="https://drive.google.com/drive/folders/1iH26GvQBYY2YzlkPEsVmZ7Dajxn8ug3O?usp=sharing "> Ir a los archivos </a>
-                  </div>
-               </div>
-               <div class="col-md-7">
-                  <div class="about_img">
-                     <figure><img src="images/tinker.png" alt="#"/></figure>
-                  </div>
-               </div>
-            </div>
-         </div>
+      
+      <!-- Segunda fila de botones -->
+      <div class="fila-botones">
+        <button onclick="agregarNumero(0)">0</button>
+        <button onclick="agregarNumero(1)">1</button>
+        <button onclick="agregarNumero(2)">2</button>
+        <button onclick="agregarNumero(3)">3</button>
+        <button onclick="agregarNumero(4)">4</button>
+        <button onclick="agregarNumero(5)">5</button>
+        <button onclick="agregarNumero(6)">6</button>
+        <button onclick="agregarNumero(7)">7</button>
+        <button onclick="agregarNumero(8)">8</button>
+        <button onclick="agregarNumero(9)">9</button>
+        
+        
+        <button onclick="agregarPunto()">.</button>
+        <button onclick="calcular()">=</button>
+       
       </div>
-      <!-- end about -->
-      
-      <!--  service -->
-      <div id="service" class="service">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="titlepage">
-                     <h2>Algunas <span class="green">Características</span></h2>
-                  </div>
-               </div>
-            </div>
-            <div class="row">
-               <div class="col-md-10 offset-md-1">
-                  <div class="row">
-                     <div class="col-md-4 col-sm-6">
-                        <div class="service_box">
-                           <i><img src="images/tem1.png" alt="#"/></i>
-                           <h3>Recorrdio BFS</h3>
-                           <p>El usuario podrá ver el recorrido en la pantalla </p>
-                        </div>
-                     </div>
-                     <div class="col-md-4 offset-md-1 col-sm-6">
-                        <div class="service_box">
-                           <i><img src="images/color2.png" alt="#"/></i>
-                           <h3>Recorrido DFS</h3>
-                           <p>Calculo de este tipo de recorrido en pantalla </p>
-                        </div>
-                     </div>
-                     <div class="col-md-4 offset-md-3 col-sm-6 mar_top">
-                        <div class="service_box">
-                           <i><img src="images/dist3.png" alt="#"/></i>
-                           <h3>Agregaar Vertice y Arista</h3>
-                           <p>Se puede agregar vertices y aritas dentro del programa</p>
-                        </div>
-                     </div>
-                     <div class="col-md-4 offset-md-1 col-sm-6 mar_top">
-                        <div class="service_box">
-                           <i><img src="images/volt.png" alt="#"/></i>
-                           <h3>Ver matriz de adyacencia</h3>
-                           <p>Se generará una matriz de adyacencia del grafo dado por el usuario</p>
-                        </div>
-                     </div>
-                     <div class="col-md-12">
-                  
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- end service -->
-      
-      
-      <!-- gallery -->
-      <div id="gallery"  class="gallery">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="titlepage">
-                     <h2>Algunas <span class="green"> imagenes del proyecto</span></h2>
-                     <p>Fotografias del funcioanmiento del proyecto </p>
-                  </div>
-               </div>
-            </div>
-            <div class="row">
-               <div class="col-md-4 col-sm-6">
-                  <div class="gallery_text">
-                     <div class="galleryh3">
-                        <h3> Imagen de los circuito </h3>
-                        <p><br>
-                           <br>
-                           <br>
-                          
-                        </p>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-4 col-sm-6">
-                  <div class="gallery_img">
-                     <figure><img src="images/c1t.png" alt="#"/></figure>
-                  </div>
-               </div>
-               <div class="col-md-4 col-sm-6">
-                  <div class="gallery_img">
-                     <figure><img src="images/esp6.png" alt="#"/></figure>
-                  </div>
-               </div>
-               <div class="col-md-4 col-sm-6">
-                  <div class="gallery_img">
-                     <figure><img src="images/ent1.png" alt="#"/></figure>
-                  </div>
-               </div>
-               <div class="col-md-4 col-sm-6">
-                  <div class="gallery_img">
-                     <figure><img src="images/ent2.png" alt="#"/></figure>
-                  </div>
-               </div>
-               <div class="col-md-4 col-sm-6">
-                  <div class="gallery_text">
-                     <div class="galleryh3">
-                        <h3> Funcionamiento </h3>
-                        <p> <br>
-                           <br>
-                            <br>
-                           
-                        </p>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-4 col-sm-6">
-                  <div class="gallery_text">
-                     <div class="galleryh3">
-                        <h3>Sensores</h3>
-                        <p> <br>
-                           <br>
-                           <br>
-                        </p>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-4 col-sm-6">
-                  <div class="gallery_img">
-                     <figure><img src="images/esp.png" alt="#"/></figure>
-                  </div>
-               </div>
-               <div class="col-md-4 col-sm-6">
-                  <div class="gallery_img">
-                     <figure><img src="images/esp2.jpg" alt="#"/></figure>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- end gallery -->
- 
-
-         </div>
-<h1 style="text-align: center; font-weight: bold;">Video del funcionameinto del programa</h1>
-      <div style="text-align: center;">
-
-         
- <iframe width="560" height="315" src="https://www.youtube.com/embed/4rpGPO26zxw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-                  </div>
-
-      
-      
-      
-      <!-- design -->
-      <div class="design">
-         <div class="container-fluid">
-            <div class="row d_flex">
-               <div class="col-md-5">
-                  <div id="design" class="carousel slide banner_design" data-ride="carousel">
-                     <ol class="carousel-indicators">
-                        <li data-target="#design" data-slide-to="0" class="active"></li>
-                        <li data-target="#design" data-slide-to="1"></li>
-                        <li data-target="#design" data-slide-to="2"></li>
-                     </ol>
-                     <div class="carousel-inner">
-                        <div class="carousel-item active">
-                           <div class="container">
-                              <div class="carousel-caption relative">
-                                 <div class="row">
-                                    <div class="col-md-12">
-                                       <div class="text_de">
-                                          <div class="titlepage">
-                                             <h2>Resumen <span class="green"></span></h2>
-                                          </div>
-                                          <p>Proyecto pensado para la industria de refrescos en la suepervición de latas.</p>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="carousel-item">
-                           <div class="container">
-                              <div class="carousel-caption relative">
-                                 <div class="row">
-                                    <div class="col-md-12">
-                                       <div class="text_de">
-                                          <div class="titlepage">
-                                             <h2>Tecnologías  <span class="green">Implementadas </span></h2>
-                                          </div>
-                                          <p>Para la elaboración del proyecto se utilizó PyQT5, Python, QT Designer y VS </p>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="carousel-item">
-                           <div class="container">
-                              <div class="carousel-caption relative">
-                                 <div class="row">
-                                    <div class="col-md-12">
-                                       <div class="text_de">
-                                          <div class="titlepage">
-                                             <h2>Temas relacionados<span class="green">Tecnologías </span></h2>
-                                          </div>
-                                          <p>Teoría de grafos y estructuras de datos </p>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <a class="carousel-control-prev" href="#design" role="button" data-slide="prev">
-                     <i class="fa fa-angle-left" aria-hidden="true"></i>
-                     <span class="sr-only">Previous</span>
-                     </a>
-                     <a class="carousel-control-next" href="#design" role="button" data-slide="next">
-                     <i class="fa fa-angle-right" aria-hidden="true"></i>
-                     <span class="sr-only">Next</span>
-                     </a>
-                  </div>
-               </div>
-               <div class="col-md-7 pad_roght0">
-                  <div class="design_img">
-                     <figure><img src="images/ent1.png" alt="#"/></figure>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- end design -->
-
-      <!--  footer -->
-      <footer>
-         <div class="footer">
-            <div class="container">
-               <div class="row">
-                  <div class=" col-md-3 col-sm-6">
-                     <ul class="social_icon">
-                        
-                     </ul>
-                     <p class="variat pad_roght2">
-                     </p>
-                  </div>
-                  <div class=" col-md-3 col-sm-6">
-                     <h3>CONTACTO</h3>
-                     <p  class="variat pad_roght2">
-                       alvaro.gallardo@iberopuebla.mx
-                       
-                     </p>
-                  </div>
-                  <div class="col-md-3 col-sm-6">
-                     <h3>Índice</h3>
-                     <ul class="link_menu">
-                        <li><a href="principal.html">Ínicio</a></li>
-                        <li><a href="abt.html">Reporte</a></li>
-                       
-                     </ul>
-                  </div>
-                  <div class="col-md-3 col-sm-6">
-                     <h3>ZIZEK</h3>
-                     <p  class="variat">
-                        "En realidad no queremos conseguir aquello que creemos querer"
-                        
-                        
-                        
-                     </p>
-                  </div>
-                  <div class="col-md-6 offset-md-6">
-                     <form id="hkh" class="bottom_form">
-                       
-                     </form>
-                  </div>
-               </div>
-            </div>
-            <div class="copyright">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-md-10 offset-md-1">
-                        <p> Estructura de Datos y Algoritmos Avanzados. Verano 2023</a></p>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </footer>
-      <!-- end footer -->
-      <!-- Javascript files-->
-      <script src="js/jquery.min.js"></script>
-      <script src="js/bootstrap.bundle.min.js"></script>
-      <script src="js/jquery-3.0.0.min.js"></script>
-      <!-- sidebar -->
-      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-      <script src="js/custom.js"></script>
-      
-   
-
-      
-   </body>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
 </html>
+
+/* Estilo para centrar la calculadora en la página */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('shrek.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .marco-madera {
+    border: 10px solid #8B4513;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: rgba(245, 245, 220, 0.9);
+    width: fit-content;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .fila-botones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .botones button {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    font-size: 18px;
+  }
+  
+  input {
+    width: calc(100% - 20px);
+    font-size: 24px;
+    text-align: right;
+    margin-bottom: 10px;
+  }
+  
+  #historial {
+    font-size: 20px;
+    color: #333;
+    height: 100px;
+    overflow-y: scroll;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    text-align: center;  /* Centra el texto horizontalmente */
+  }
+  
+  // Obtener referencia al elemento de pantalla y al historial
+let pantalla = document.getElementById("pantalla");
+let historial = document.getElementById("historial");
+let recienCalculado = false;
+
+// Variables para mantener el estado actual de la operación y el historial
+let operacionActual = "";
+let historialOperaciones = [];
+
+// Función para limpiar la pantalla y reiniciar la operación actual
+function limpiarPantalla() {
+  pantalla.value = "";
+  operacionActual = "";
+}
+
+// Función para agregar un número a la operación actual y actualizar la pantalla
+function agregarNumero(num) {
+  operacionActual += num;
+  pantalla.value = operacionActual;
+}
+
+// Función para agregar un operador a la operación actual y actualizar la pantalla
+function agregarOperador(operador) {
+  operacionActual += ` ${operador} `;
+  pantalla.value = operacionActual;
+}
+
+// Función para calcular el resultado de la operación actual
+function calcular() {
+  try {
+    // Utiliza eval() para calcular el resultado
+    let resultado = eval(operacionActual);
+    pantalla.value = resultado;
+    agregarHistorial(operacionActual, resultado);  // Agregar al historial
+    ultimaOperacion = operacionActual;  // Guardar la última operación
+    operacionActual = resultado;  // Actualizar la operación actual al resultado
+  } catch (e) {
+    pantalla.value = "Error";
+  }
+}
+
+// Función para agregar un punto decimal a la operación actual
+function agregarPunto() {
+  operacionActual += ".";
+  pantalla.value = operacionActual;
+}
+
+// Función para calcular la raíz cuadrada del valor actual
+function calcularRaizCuadrada() {
+  try {
+    let resultado = Math.sqrt(eval(operacionActual));
+    pantalla.value = resultado;
+    agregarHistorial(`√(${operacionActual})`, resultado);
+    operacionActual = resultado;
+  } catch (e) {
+    pantalla.value = "Error";
+  }
+}
+
+// Función para elevar al cuadrado el valor actual
+function calcularCuadrado() {
+  try {
+    let resultado = Math.pow(eval(operacionActual), 2);
+    pantalla.value = resultado;
+    agregarHistorial(`(${operacionActual})²`, resultado);
+    operacionActual = resultado;
+  } catch (e) {
+    pantalla.value = "Error";
+  }
+}
+
+// Función para calcular el logaritmo natural del valor actual
+function calcularLog() {
+  try {
+    let resultado = Math.log(eval(operacionActual));
+    pantalla.value = resultado;
+    agregarHistorial(`log(${operacionActual})`, resultado);
+    operacionActual = resultado;
+  } catch (e) {
+    pantalla.value = "Error";
+  }
+}
+
+// Función para agregar una operación y su resultado al historial
+function agregarHistorial(operacion, resultado) {
+  historialOperaciones.push(`${operacion} = ${resultado}`);
+  actualizarHistorial();
+}
+
+// Función para actualizar la visualización del historial en la página
+function actualizarHistorial() {
+  historial.innerHTML = "";
+  for (let i = historialOperaciones.length - 1; i >= 0; i--) {
+    historial.innerHTML += `<div>${historialOperaciones[i]}</div>`;
+  }
+}
+
+// Variable para mantener la última operación realizada
+let ultimaOperacion = "";
+
+// Función para mostrar la última operación en la pantalla
+function mostrarUltimaOperacion() {
+  if (ultimaOperacion !== "") {
+    operacionActual = ultimaOperacion;
+    pantalla.value = operacionActual;
+  } else {
+    pantalla.value = "Sin última operación";
+  }
+}
+
+document.addEventListener("keydown", function(event) {
+    switch (event.key) {
+      case "0":
+        agregarNumero(0);
+        break;
+      case "1":
+        agregarNumero(1);
+        break;
+      case "2":
+        agregarNumero(2);
+        break;
+      case "3":
+        agregarNumero(3);
+        break;
+      case "4":
+        agregarNumero(4);
+        break;
+      case "5":
+        agregarNumero(5);
+        break;
+      case "6":
+        agregarNumero(6);
+        break;
+      case "7":
+        agregarNumero(7);
+        break;
+      case "8":
+        agregarNumero(8);
+        break;
+      case "9":
+        agregarNumero(9);
+        break;
+      case "+":
+        agregarOperador('+');
+        break;
+      case "-":
+        agregarOperador('-');
+        break;
+      case "*":
+        agregarOperador('*');
+        break;
+      case "/":
+        agregarOperador('/');
+        break;
+      case ".":
+        agregarPunto();
+        break;
+      case "Enter":
+        calcular();
+        break;
+      case "c": //  'c' para limpiar
+        limpiarPantalla();
+        break;
+      
+      default:
+        break;
+    }
+  });
+  
+  function borrarUltimoCaracter() {
+    operacionActual = operacionActual.slice(0, -1);
+    pantalla.value = operacionActual;
+  }
+  
+  document.addEventListener("keydown", function(event) {
+    switch (event.key) {
+      // ... (otros casos)
+      case "Backspace":
+        borrarUltimoCaracter();
+        break;
+      // ... (otros casos)
+    }
+  });
+  
